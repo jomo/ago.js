@@ -1,6 +1,6 @@
 # Ago.js
 
-Ago.js converts timestamps to human-readable time without relying on bloated libraries.
+Ago.js converts timestamps to human-readable time without relying on bloated libraries.  
 Examples: `1 minute ago`, `3 days ahead`, `3 weeks ago`, `5 months ahead`, `just now`
 
 # Usage
