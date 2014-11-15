@@ -68,6 +68,12 @@ You can customize Ago.js by overriding the [default options](#default-options).
 }
 ```
 
+# CDN
+
+```HTML
+<script src="https://cdn.rawgit.com/jomo/ago.js/master/ago.min.js"></script>
+```
+
 # Examples
 
 ### Using your own classes
