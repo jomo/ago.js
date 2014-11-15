@@ -53,14 +53,8 @@ You can customize Ago.js by overriding the [default options](#default-options).
     return new Date(node.getAttribute("datetime"));
   },
   format: function(time, unit) {
-    if (!unit) {
-      return "just now";
-    }
-    if (time < 0) {
-      var tail = " ahead";
-    } else {
-      var tail = " ago";
-    }
+    if (!unit) return "just now";
+    var tail = time < 0 ? " ahead" : " ago";
     return Math.abs(time) + " " + unit + tail;
   },
   plural: {
