@@ -48,7 +48,6 @@ You can customize Ago.js by overriding the [default options](#default-options).
     ["year", 31536000]
   ],
   date: function(node) {
-    console.debug(node);
     // works on  HTML "time" nodes
     return new Date(node.getAttribute("datetime"));
   },
