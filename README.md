@@ -5,7 +5,7 @@ Examples: `1 minute ago`, `3 days ahead`, `3 weeks ago`, `5 months ahead`, `just
 
 # Usage
 
-If you use HTML's `<time>` tags, all you need is
+If you use HTML `<time>` tags, all you need is
 ```HTML
 <time datetime="2014-09-10T18:34:13+00:00">2014-09-10T18:34:13+00:00</time>
 ```
@@ -14,7 +14,7 @@ If you use HTML's `<time>` tags, all you need is
 Ago();
 ```
 
-Results looks like this:
+Results look like this:
 ```HTML
 <time datetime="2014-09-10T18:34:13+00:00">2 months ago</time>
 ```
@@ -48,7 +48,7 @@ You can customize Ago.js by overriding the [default options](#default-options).
     ["year", 31536000]
   ],
   date: function(node) {
-    // works on  HTML "time" nodes
+    // works on  HTML <time> nodes
     return new Date(node.getAttribute("datetime"));
   },
   format: function(time, unit) {
@@ -69,9 +69,8 @@ You can customize Ago.js by overriding the [default options](#default-options).
 
 # CDN
 
-```HTML
-<script src="https://cdn.rawgit.com/jomo/ago.js/master/ago.min.js"></script>
-```
+You can use the awesome [RawGit CDN](https://rawgit.com/)!  
+See [releases](https://github.com/jomo/ago.js/releases) for examples.
 
 # Examples
 
