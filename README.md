@@ -3,6 +3,14 @@
 Ago.js converts timestamps to human-readable time without relying on bloated libraries.  
 Examples: `1 minute ago`, `3 days ahead`, `3 weeks ago`, `5 months ahead`, `just now`
 
+# CDN
+
+You can use the awesome [jsDelivr CDN](https://jsdelivr.net):
+
+```html
+<script src="https://cdn.jsdelivr.net/gh/jomo/ago.js@0.0.1/ago.min.js" integrity="sha256-xw0JUUdbuZQCVO+QScoxrlEsD4nZGCjMRh9PP8GLhcY=" crossorigin="anonymous"></script>
+```
+
 # Usage
 
 If you use HTML `<time>` tags, all you need is
@@ -66,11 +74,6 @@ You can customize Ago.js by overriding the [default options](#default-options).
   }
 }
 ```
-
-# CDN
-
-You can use the awesome [RawGit CDN](https://rawgit.com/)!  
-See [releases](https://github.com/jomo/ago.js/releases) for examples.
 
 # Examples
 
