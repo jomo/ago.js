@@ -10,12 +10,12 @@ function Ago(nodes, options) {
   var default_opts = {
     interval: 10000, // 10 secs
     units: [
-      ["minute",     60],
-      ["hour",     3600],
-      ["day",     86400],
-      ["week",   604800],
-      ["month", 2592000],
-      ["year", 31536000]
+      ["minute","minutes",  60],
+      ["hour","hours",      3600],
+      ["day","days",        86400],
+      ["week", "weeks",     604800],
+      ["month","months",    2592000],
+      ["year", "years",     31536000]
     ],
     date: function(node) {
       // works on  HTML "time" nodes
@@ -26,14 +26,6 @@ function Ago(nodes, options) {
       var tail = time < 0 ? " ahead" : " ago";
       return Math.abs(time) + " " + unit + tail;
     },
-    plural: {
-      minute: "minutes",
-      hour: "hours",
-      day: "days",
-      week: "weeks",
-      month: "months",
-      year: "years"
-    }
   };
 
   // override default options
@@ -53,21 +45,20 @@ function Ago(nodes, options) {
     var unit = null;
     var unit_time = null;
     for (var u in options.units) {
-      var secs = options.units[u][1];
+      var secs = options.units[u][2];
       if (abs_time >= secs) {
-        unit = options.units[u][0];
+        if(Math.floor(abs_time/secs) != 1){
+          unit = options.units[u][1];
+        }else{
+          unit = options.units[u][0];
+        }
         unit_time = secs;
       } else {
         break;
       }
     }
-
     if (unit_time !== null) {
       abs_time = Math.floor(abs_time/unit_time);
-      // plural
-      if (abs_time != 1) {
-        unit = options.plural[unit];
-      }
     }
     node.textContent = options.format(ago_time < 0 ? -abs_time : abs_time, unit);
   };

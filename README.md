@@ -48,12 +48,12 @@ You can customize Ago.js by overriding the [default options](#default-options).
 {
   interval: 10000, // 10 secs
   units: [
-    ["minute",     60],
-    ["hour",     3600],
-    ["day",     86400],
-    ["week",   604800],
-    ["month", 2592000],
-    ["year", 31536000]
+    ["minute","minutes",  60],
+    ["hour","hours",      3600],
+    ["day","days",        86400],
+    ["week", "weeks",     604800],
+    ["month","months",    2592000],
+    ["year", "years",     31536000]
   ],
   date: function(node) {
     // works on  HTML <time> nodes
@@ -63,14 +63,6 @@ You can customize Ago.js by overriding the [default options](#default-options).
     if (!unit) return "just now";
     var tail = time < 0 ? " ahead" : " ago";
     return Math.abs(time) + " " + unit + tail;
-  },
-  plural: {
-    minute: "minutes",
-    hour: "hours",
-    day: "days",
-    week: "weeks",
-    month: "months",
-    year: "years"
   }
 }
 ```
@@ -116,21 +108,13 @@ Ago({
 // German
 Ago({
   units: [
-    ["Minute",     60],
-    ["Stunde",   3600],
-    ["Tag",     86400],
-    ["Woche",  604800],
-    ["Monat", 2592000],
-    ["Jahr", 31536000]
+    ["Minute","Minuten",  60],
+    ["Stunde","Stunden",  3600],
+    ["Tag","Tage",        86400],
+    ["Woche","Wochen",    604800],
+    ["Monat","Monate",    2592000],
+    ["Jahr","Jahre",      31536000]
   ],
-  plural: {
-    Minute: "Minuten",
-    Stunde: "Stunden",
-    Tag: "Tagen",
-    Woche: "Wochen",
-    Monat: "Monaten",
-    Jahr: "Jahren"
-  },
   format: function(time, unit) {
     if (!unit) {
       return "jetzt";
